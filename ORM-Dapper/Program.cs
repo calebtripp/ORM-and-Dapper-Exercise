@@ -34,6 +34,18 @@ namespace ORM_Dapper
             {
                 Console.WriteLine($"{product.CategoryID} {product.Price} {product.Name} \n");
             }
+
+            Console.WriteLine("-------------------------------\n");
+
+            var productUpdate = pRepo.GetProduct(2);
+            productUpdate.Name = "Lenovo Yoga";
+            productUpdate.Price = 1;
+            productUpdate.CategoryID = 1;
+            productUpdate.StockLevel = 1;
+            productUpdate.OnSale = true;   
+            pRepo.UpdateProduct(productUpdate);
+
+            Console.ReadKey();
         }
     }
 }

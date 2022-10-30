@@ -16,7 +16,6 @@ namespace ORM_Dapper
         {
             _conn = conn;
         }
-
         public IEnumerable<Department> GetAllDepartments()
         {
             return _conn.Query<Department>("SELECT * FROM Departments");
